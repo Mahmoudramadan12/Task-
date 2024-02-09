@@ -1,0 +1,68 @@
+<!-- Adjusted HTML with accessible names for buttons -->
+
+<div class="wrapper" dir="rtl" color="primary">
+  <mat-toolbar color="primary" class="navbar navbar-default py-2" dir="rtl">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="welcome">
+          <img src="../assets/Screenshot 2024-02-07 153826.png" alt=""> كتابك
+        </a>
+        <h2 class="text"> المواد</h2>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <ul class="nav navbar-right d-flex align-items-end">
+          <li routerLinkActive="active">
+            <a routerLink="/new-exam" aria-label="New Exam">
+              <i class="far fa-calendar-minus"></i>
+            </a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/students" aria-label="Students">
+              <i class="fas fa-question-circle"></i>
+            </a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/subjects" aria-label="Subjects">
+              <i class="far fa-bell"></i>
+            </a>
+          </li>
+          <li>
+            <a class="pic" routerLinkActive="active" routerLink="welcome" aria-label="Profile">
+              <img src="../assets/Screenshot 2024-02-07 154152.png" alt="">
+            </a>
+          </li>
+        </ul>
+        <div class="info">
+          <h4>محمود</h4>
+          <h5>معلم</h5>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <div class="sidebar">
+    <div class="m-2">
+      <a class="link" mat-list-item routerLink="/" aria-label="Home">
+        <i class="fas fa-graduation-cap"></i>
+        <span class="p-2"> الرئيسية </span>
+      </a>
+    </div>
+    <div class="m-2">
+      <a class="link" mat-list-item routerLink="/sbject" aria-label="Study Subjects">
+        <i class="fas fa-book"></i>
+        <span class="p-2"> المواد الدراسية </span>
+      </a>
+    </div>
+    <div class="end">
+      <a class="link" mat-list-item routerLink="/login" aria-label="Logout">
+        <i class="fas fa-sign-out-alt"></i>
+        <span class="p-2">تسجيل الخروج </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

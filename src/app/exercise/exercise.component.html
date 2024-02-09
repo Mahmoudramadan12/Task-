@@ -1,0 +1,96 @@
+<div fxLayout="row" dir="rtl">
+    <button class="button" mat-button routerLink="/sbject">
+        <i class="fas fa-book"></i>
+        <a class="link">المواد الدراسية</a>
+    </button>
+
+    <button class="button" mat-button routerLink="/exercise">
+        <i class="fas fa-book"></i>
+        <a class="link">كل التمارين</a>
+    </button>
+</div>
+
+<div class="articles" id="articles" dir="rtl">
+    <div class="contain" dir="rtl">
+        <div class="color">
+            <div class="hand">
+                <h1>اسحب نوع السؤال</h1>
+                <span class="icon"> <i class="fas fa-hand-pointer"></i></span>
+            </div>
+
+            <div cdkDropList (cdkDropListDropped)="onDrop($event)" class="drop">
+                <div *ngFor="let item of dragItems" cdkDrag [cdkDragData]="item.data">
+                    {{ item.label }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Choice Question Form -->
+        <form #f="ngForm">
+            <div class="container">
+                <div class="form-group" class="form-control">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="قم بسحب وإدراج نوع السؤال هنا ..." name="question" [value]="text"
+                        ngModel></textarea>
+
+                    <h3>اختيار فردي</h3>
+
+                    <input type="text" class="form-control" name="question1" placeholder=" السؤال نص ..."
+                        [(ngModel)]="formData.question1">
+                    <button mat-button color="accent" (click)="addAnswer()"> + خيار جديد </button>
+
+                    <mat-radio-group name="level" [(ngModel)]="formData.level">
+                        <mat-radio-button value="easy">سهل</mat-radio-button>
+                        <mat-radio-button value="medium">متوسط</mat-radio-button>
+                        <mat-radio-button value="hard">صعب</mat-radio-button>
+                    </mat-radio-group>
+
+                    <div class="d-flex" *ngFor="let answer of formData.answers; let i = index">
+                        <input type="text" class="form-control ans" placeholder=" السؤال نص ..." name="ans{{ i }}"
+                            [(ngModel)]="answer.ans">
+                        <mat-radio-group name="test{{ i }}" [(ngModel)]="answer.test">
+                            <mat-radio-button color="accent" value="one">تحديد كاجابة صحيحة</mat-radio-button>
+                        </mat-radio-group>
+                        <button type="button" mat-icon-button color="warn" (click)="removeAnswer(i)">
+                        </button>
+                    </div>
+
+                    <button class="btn btn-danger" (click)="saveDraft()"> حفظ كمسودة </button>
+                    <button mat-button color="warn" (click)="clearForm(f)">الغاء </button>
+                </div>
+                <form #f2="ngForm" class="form-control">
+                    <div class="form-group">
+                        <h3>اختيار من متعدد </h3>
+
+                        <input type="text" class="form-control" placeholder=" السؤال نص ..."
+                            [(ngModel)]="formData2.question" name="question">
+
+                        <button mat-button color="accent" (click)="addOption()"> + خيار جديد </button>
+
+                        <mat-radio-group name="level" [(ngModel)]="formData2.level">
+                            <mat-radio-button value="easy">سهل</mat-radio-button>
+                            <mat-radio-button value="medium">متوسط</mat-radio-button>
+                            <mat-radio-button value="hard">صعب</mat-radio-button>
+                        </mat-radio-group>
+
+                        <div class="d-flex" *ngFor="let option of formData2.options; let i = index">
+                            <input type="text" class="form-control ans" placeholder=" السؤال نص ..."
+                                [(ngModel)]="option.qusteion" name="qusteion{{ i }}">
+                            <mat-checkbox color="accent" [value]="option.ans" name="ans{{ i }}"
+                                [(ngModel)]="option.ans">تحديد
+                                كاجابة صحيحة</mat-checkbox>
+                            <button type="button" mat-icon-button color="warn" (click)="removeOption(i)">
+                            </button>
+                        </div>
+
+                        <button class="btn btn-danger" color="accent" (click)="saveDraft2()"> حفظ كمسودة </button>
+                        <button mat-button color="warn" (click)="clearForm2(f2)"> الغاء </button>
+                    </div>
+                </form>
+            </div>
+        </form>
+
+        <!-- Multiple Choice Question Form -->
+
+    </div>
+</div>

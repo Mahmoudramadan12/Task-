@@ -1,0 +1,131 @@
+.articles {
+  position: relative;
+}
+.articles .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  gap: 40px;
+}
+.articles .box {
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.articles .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+.articles .box img {
+  width: 100%;
+  height: 100px;
+  border-radius: 6px;
+}
+.articles .box .content {
+  padding: 20px;
+}
+.articles .box .content h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 30px;
+}
+.articles .box h4 {
+  font-weight: bold;
+}
+.articles .box .content p {
+  margin: 10px;
+  line-height: 1.5;
+  color: #777;
+}
+.articles .box .info {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  max-height: 50px;
+}
+.articles .box .info a {
+  color: #ff63b8;
+  font-weight: bold;
+  text-decoration: none;
+}
+.info {
+  color: #ff63b8;
+}
+
+.main-title {
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+
+.example-container {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+
+.btn {
+  width: 30%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.btn:hover {
+  border-bottom: 3px solid #ff63b8;
+  color: #ff63b8;
+  .link {
+    color: #ff63b8;
+  }
+}
+.link {
+  margin-right: 20px;
+  font-size: 15px;
+  text-decoration: none;
+  padding-bottom: 100px;
+  color: #777;
+}
+.active {
+  text-align: center;
+  display: inline-block;
+  width: 70px;
+  border-radius: 30px;
+  background-color: #b9efbf;
+}
+.inactive {
+  text-align: center;
+  display: inline-block;
+  width: 70px;
+  border-radius: 30px;
+  background-color: #ffefc6;
+}
+/* Initial styles for wider screens */
+
+@media (max-width: 768px) {
+  div[fxLayout="row"] {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  button.btn {
+    margin-bottom: 10px;
+    z-index: 3;
+  }
+
+  div.articles {
+    text-align: center;
+  }
+
+  .articles .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articles .box {
+    margin-bottom: 20px;
+  }
+  .articles .box .content h3 {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,32 @@
+<div fxLayout="row" dir="rtl">
+    <button class="btn" mat-button routerLink="/sbject">
+        <i class="fas fa-book"></i>
+        <a class="link">
+            المواد الدراسية</a>
+    </button>
+
+    <button class="btn" mat-button routerLink="/exercise"> <i class="fas fa-book"></i>
+        <a class="link"> كل التمارين</a></button>
+
+</div>
+
+
+<div class="articles" id="articles" dir="rtl">
+    <h2 class="main-title">المواد</h2>
+    <div class="container" dir="rtl">
+        <div class="box" *ngFor="let i of users">
+            <img decoding="async" src="{{i.image}}" alt="" />
+            <div class="content">
+                <h3> اسم الماده:{{i.name}} </h3>
+                <p>{{i.description}}</p>
+                <h4>الحاله: <span class="{{i.status}}">{{i.status}}</span></h4>
+                <div class="info">
+                    <a href="">اضافه تمرين</a>
+                    <i class="fas fa-long-arrow-alt-left "></i>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
