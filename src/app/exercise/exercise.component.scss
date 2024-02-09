@@ -81,17 +81,21 @@
   background: deeppink;
   width: 20%;
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .articles .contain {
-    grid-template-columns: 100%;
+    position: absolute;
+    left: 100px;
+    grid-template-columns: 160%;
     gap: 10px;
+    padding-right: 60px;
   }
   .color {
-    width: 100%;
+    width: 95%;
+    display: inline-block;
   }
   div[fxLayout="row"] {
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     padding-top: 60px;
   }
 
@@ -100,3 +104,4 @@
     z-index: 3;
   }
 }
+
