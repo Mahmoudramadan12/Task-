@@ -102,9 +102,13 @@
 
 @media (max-width: 768px) {
   div[fxLayout="row"] {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding-top: 50px;
+    left: 180px;
+    position: relative;
+    top: 45px;
+    display: flex;
   }
 
   button.btn {
@@ -112,20 +116,22 @@
     z-index: 3;
   }
 
-  div.articles {
-    text-align: center;
-  }
-
   .articles .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    left: 248px;
+    grid-template-columns: 160%;
+    gap: 10px;
+    padding-right: 60px;
   }
 
   .articles .box {
     margin-bottom: 20px;
+    width: 500%;
   }
   .articles .box .content h3 {
     font-size: 15px;
+  }
+  .main-title {
+    visibility: hidden;
   }
 }
