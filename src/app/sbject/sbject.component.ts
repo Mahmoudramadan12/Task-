@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Service } from '../hero.service';
+import { Service } from '../service';
 import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-sbject',
