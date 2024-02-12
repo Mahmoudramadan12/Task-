@@ -1,6 +1,5 @@
-import { CdkDragDrop, CdkDragEnd, CdkDragMove } from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-exercise',
@@ -8,7 +7,7 @@ import { FormGroup, NgForm } from '@angular/forms';
   styleUrl: './exercise.component.scss',
 })
 export class ExerciseComponent implements OnInit {
-  text: any = 'hjhjh';
+  text: string = '';
   formData: any = {
     qusteion1: '',
     level: 'easy',
@@ -85,8 +84,6 @@ export class ExerciseComponent implements OnInit {
   ];
 
   onDrop(event: CdkDragDrop<string[]>): void {
-    // Handle drop within the same container
-
     // Access the value of the dragged item directly
     this.text = event.item.data;
     console.log('Dragged txet:', this.text);
